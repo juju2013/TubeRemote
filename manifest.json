@@ -3,7 +3,7 @@
   "manifest_version": 2,
   "name": "*tube remote",
   "description": "Play video on remote devices.",
-  "version": "0.0",
+  "version": "0.1",
 
   "icons": {
     "48": "icons/remote.svg",
@@ -12,7 +12,7 @@
 
   "browser_specific_settings": {
     "gecko": {
-      "strict_min_version": "56.0a1"
+      "strict_min_version": "57.0"
     }
   },
 
@@ -34,5 +34,5 @@
     "webRequest",
     "webRequestBlocking"
   ]
-
+  
 }
