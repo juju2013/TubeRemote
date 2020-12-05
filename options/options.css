@@ -1,0 +1,17 @@
+.multiline {
+  display: block;
+  margin-top: 1em;
+}
+
+.note {
+  display: block;
+  font-size: 0.9em;
+  margin-left:25px;
+}
+
+.notconnected {
+  color: red;
+}
+.connected {
+  color: green;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="options.css"/>
+  </head>
+
+  <body>
+
+    <form id="options">
+      <p class="note">Note: only websocket is doable in browser.</p>
+      <p class="note">For instance, to connect to a emqx broker: <i>user:password@ip:8083/mqtt</i></p>
+      <label for="broker">MQTT Brocker: </label>
+      ws://<input type="text" id="broker" name="broker"> 
+      <a href="https://nodejs.org/api/url.html#url_url_strings_and_url_objects">Syntax Help</a> 
+      <span id="connectstatus" class="notconnected">not connected</span>
+      <p></p>
+      
+      <label for="topic">Topic: </label>
+      <input type="text" id="topic" name="topic">
+      <p></p>
+      
+    </form>
+    
+
+    <script src="/mqtt.min.js"></script>
+    <script src="options.js"></script>
+  </body>
+
+</html>

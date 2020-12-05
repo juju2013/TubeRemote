@@ -1,0 +1,38 @@
+{
+
+  "manifest_version": 2,
+  "name": "*tube remote",
+  "description": "Play video on remote devices.",
+  "version": "0.0",
+
+  "icons": {
+    "48": "icons/remote.svg",
+    "96": "icons/remote.svg"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "strict_min_version": "56.0a1"
+    }
+  },
+
+  "background": {
+    "page" : "background/background.html"
+  },
+
+  "options_ui": {
+    "page": "options/options.html",
+    "browser_style": true
+  },
+
+  "permissions": [
+    "storage",
+    "*://youtube.com/*",
+    "*://*.youtube.com/*",
+    "*://vimeo.com/*",
+    "*://www.ultimedia.com/deliver/*",
+    "webRequest",
+    "webRequestBlocking"
+  ]
+
+}
