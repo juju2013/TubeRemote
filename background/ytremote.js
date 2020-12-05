@@ -21,7 +21,6 @@ function publish(broker, topic, msg) {
     client.subscribe(topic, function (err) {
       if (!err) {
         client.publish(topic, msg, {}, function (err) {
-          console.log("client.end");
           client.end();
         });
       }
