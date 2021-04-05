@@ -3,7 +3,7 @@
   "manifest_version": 2,
   "name": "*tube remote",
   "description": "Play video on remote devices.",
-  "version": "0.4",
+  "version": "0.6",
 
   "icons": {
     "48": "icons/remote.svg",
@@ -30,6 +30,8 @@
     "*://youtube.com/*",
     "*://*.youtube.com/*",
     "*://vimeo.com/*",
+    "*://player.vimeo.com/*",
+    "*://www.vimeo.com/*",
     "*://www.ultimedia.com/deliver/*",
     "webRequest",
     "webRequestBlocking"

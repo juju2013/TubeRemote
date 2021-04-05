@@ -33,6 +33,15 @@ function publish(broker, topic, msg) {
  */
 function tuberemote(req)
 {
+  // exceptions
+  if (req.url.match(/.*\.youtube\.com\/user\/.*/gm) 
+    || req.url.match(/.*\.youtube\.com\/channel\/.*/gm) 
+    || req.url.match(/.*\/consent\.youtube\.com\/.*/gm) 
+    || req.url.match(/.*youtube\.com\/.*\.js/gm) 
+  ) {
+    return {cancel:false};
+  }
+  // send to mqtt
   browser.storage.local.get().then(
     options => publish("ws://"+options.broker, options.topic, req.url)
   );
@@ -49,6 +58,8 @@ browser.webRequest.onBeforeRequest.addListener(
       '*://*.youtube.com/*',
       '*://youtube.com/*',
       '*://vimeo.com/*',
+      "*://player.vimeo.com/*",
+      "*://www.vimeo.com/*",
       "*://www.ultimedia.com/deliver/*"
     ]
   },
