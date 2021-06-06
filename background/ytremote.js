@@ -34,9 +34,12 @@ function publish(broker, topic, msg) {
 function tuberemote(req)
 {
   // exceptions
-  if req.match(/.*\.youtube\.com\/user\/.*/) 
-    || req.match(/.*\.youtube\.com\/channel\/.*/) 
-  {
+  if (req.url.match(/.*\.youtube\.com\/user\/.*/gm) 
+    || req.url.match(/.*\.youtube\.com\/channel\/.*/gm) 
+    || req.url.match(/.*\/consent\.youtube\.com\/.*/gm) 
+    || req.url.match(/.*youtube\.com\/.*\.js/gm) 
+    || req.url.match(/.*youtube\.com\/youtubei.*/gm) 
+  ) {
     return {cancel:false};
   }
   // send to mqtt
