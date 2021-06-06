@@ -61,8 +61,8 @@ browser.webRequest.onBeforeRequest.addListener(
       '*://vimeo.com/*',
       "*://player.vimeo.com/*",
       "*://www.vimeo.com/*",
-      "*://www.ultimedia.com/deliver/*"
-      "*://v.redd.it/*",
+      "*://www.ultimedia.com/deliver/*",
+      "*://v.redd.it/*"
     ]
   },
   ["blocking"]
