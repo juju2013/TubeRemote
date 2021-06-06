@@ -33,6 +33,13 @@ function publish(broker, topic, msg) {
  */
 function tuberemote(req)
 {
+  // exceptions
+  if req.match(/.*\.youtube\.com\/user\/.*/) 
+    || req.match(/.*\.youtube\.com\/channel\/.*/) 
+  {
+    return {cancel:false};
+  }
+  // send to mqtt
   browser.storage.local.get().then(
     options => publish("ws://"+options.broker, options.topic, req.url)
   );
@@ -49,7 +56,10 @@ browser.webRequest.onBeforeRequest.addListener(
       '*://*.youtube.com/*',
       '*://youtube.com/*',
       '*://vimeo.com/*',
+      "*://player.vimeo.com/*",
+      "*://www.vimeo.com/*",
       "*://www.ultimedia.com/deliver/*"
+      "*://v.redd.it/*",
     ]
   },
   ["blocking"]
