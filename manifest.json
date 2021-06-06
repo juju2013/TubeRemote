@@ -3,7 +3,7 @@
   "manifest_version": 2,
   "name": "*tube remote",
   "description": "Play video on remote devices.",
-  "version": "0.6",
+  "version": "0.7",
 
   "icons": {
     "48": "icons/remote.svg",
